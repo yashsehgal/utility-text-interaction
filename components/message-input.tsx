@@ -24,7 +24,7 @@ const MessageInput = () => {
       <div
         className={cn(
           'message-input border-2 rounded-xl overflow-hidden transition-all',
-          focus ? 'border-neutral-200 ring-2 ring-offset-4' : '',
+          focus ? 'border-neutral-200 ring-4' : '',
         )}>
         <textarea
           placeholder="Ask anything..."
