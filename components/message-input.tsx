@@ -5,15 +5,16 @@ import {
   IconCornerDownLeft,
   IconPaperclip,
 } from '@tabler/icons-react';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
 import { motion } from 'framer-motion';
+import { ApplicationContext } from '@/contexts/application-context';
 
 const MessageInput = () => {
-  const [message, setMessage] = useState<string>('');
+  const { messageInput, setMessageInput } = useContext(ApplicationContext);
   const [focus, setFocus] = useState<boolean>(false);
 
   const handleMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value as string);
+    setMessageInput(e.target.value as string);
   };
 
   const handleMessageInputFocus = () => setFocus(true);
@@ -32,13 +33,13 @@ const MessageInput = () => {
           onBlur={handleMessageInputBlur}
           onFocus={handleMessageInputFocus}
           onChange={handleMessageChange}
-          value={message}
+          value={messageInput}
         />
         <div className="p-4 border-t bg-neutral-50 flex items-center justify-between gap-2">
           <button className="px-4 py-2 bg-white border rounded-lg flex items-center justify-center gap-2 text-sm hover:brightness-95 active:brightness-90 focus:ring focus:outline-none transition-all">
             <IconPaperclip {...TABLER_CONFIG} /> Attach files
           </button>
-          {message.length > 0 ? (
+          {messageInput.length > 0 ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.2 }}
               animate={{ opacity: 1, scale: 1 }}>
@@ -52,7 +53,7 @@ const MessageInput = () => {
         </div>
       </div>
       <div className="flex items-center justify-end">
-        {message.length > 0 && (
+        {messageInput.length > 0 && (
           <motion.p
             className="flex items-center justify-end gap-2 text-sm text-neutral-400"
             initial={{ opacity: 0, y: 12 }}
