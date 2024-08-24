@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 kbd {
-  @apply text-sm font-medium px-1.5 py-0.5 rounded-md border-b-4 bg-neutral-100 text-neutral-600;
+  @apply text-sm font-medium px-1.5 py-0.5 rounded-md border-b-4 bg-neutral-100 text-neutral-600 border-t border-x;
 }

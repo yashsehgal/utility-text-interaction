@@ -22,7 +22,7 @@ export const INITIAL_APP_CONTEXT_DATA: ApplicationContextType = {
     responseInteractionState: 'IDLE',
     suggestionBlockInteractionState: 'IDLE',
     interactableResponseString:
-      'Resuls for <[DROPDOWN](default=all)(options=tony,bruce,steve,peter)> for projects with file name <[INPUT](placeholder=file name)(defaultValue=new yeat 2024 template)>',
+      'Results for <[DROPDOWN](default=all)(options=tony,bruce,steve,peter)> for projects with file name <[INPUT](placeholder=file name)(defaultValue=new year 2024 template)> where the project is created <[DROPDOWN](default=yesterday)(options=yesterday,this week,this month,last 3 months,last 6 months,last year,anytime)>',
   },
   setUIState: () => {},
 };
