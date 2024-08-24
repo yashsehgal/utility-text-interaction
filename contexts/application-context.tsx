@@ -5,6 +5,7 @@ export type InteractionState = 'IDLE' | 'LOADING' | 'SUCCESS' | 'ERROR';
 export type UIStateType = {
   responseInteractionState: InteractionState;
   suggestionBlockInteractionState: InteractionState;
+  interactableResponseString: string;
 };
 
 export type ApplicationContextType = {
@@ -20,6 +21,8 @@ export const INITIAL_APP_CONTEXT_DATA: ApplicationContextType = {
   UIState: {
     responseInteractionState: 'IDLE',
     suggestionBlockInteractionState: 'IDLE',
+    interactableResponseString:
+      'Resuls for <[DROPDOWN](default=all)(options=tony,bruce,steve,peter)> for projects with file name <[INPUT](placeholder=file name)(defaultValue=new yeat 2024 template)>',
   },
   setUIState: () => {},
 };
